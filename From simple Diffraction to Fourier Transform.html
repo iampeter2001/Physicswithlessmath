@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>More Physics, Less Math – Diffraction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Basic styling -->
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      margin: 1.5cm;
+      line-height: 1.5;
+      max-width: 800px;
+    }
+    h1, h2, h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-weight: bold;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 0.8em;
+    }
+    h2 {
+      margin-top: 1.4em;
+      font-size: 1.4em;
+    }
+    h3 {
+      margin-top: 1.2em;
+      font-size: 1.2em;
+    }
+    p {
+      margin: 0.6em 0;
+    }
+    ul, ol {
+      margin: 0.4em 0 0.8em 1.4em;
+    }
+    strong {
+      font-weight: bold;
+    }
+    em {
+      font-style: italic;
+    }
+    code {
+      font-family: "Courier New", monospace;
+    }
+    a {
+      color: #0645ad;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .center {
+      text-align: center;
+    }
+  </style>
+
+  <!-- MathJax for LaTeX-style math -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js" async></script>
+</head>
+<body>
+
+  <h1>More Physics, Less Math</h1>
+
+  <p>
+    Physics is about understanding what is happening in the world.
+    This website is a place to write ideas, explanations, and physical
+    intuition without worrying about equations or formatting.
+  </p>
+
+  <h2>Diffraction</h2>
+
+  <p>
+    Today we will try to understand the concept of diffraction, the different types of diffraction, and its relation to Fourier optics.
+    We will also see how a lens allows us to observe diffraction patterns in a simple and intuitive way.
+    To begin with, you should be familiar with Huygens' wave theory and the basic idea of interference.
+    Some familiarity with wave vectors, wavelength, and the exponential representation of light waves will be helpful, but we will focus mainly on the physical picture rather than mathematical details.
+    Interference occurs whenever two or more waves overlap.
+    At any point in space, the total electric field is obtained by adding the electric field vectors of the individual waves.
+    Depending on their relative phases, this vector sum can lead to constructive interference, destructive interference, or something in between.
+  </p>
+
+  <p>
+    Constructive interference occurs when the waves are in phase.
+    In this case, the peaks and troughs of the waves align, and the resulting
+    electric field has a larger amplitude.
+  </p>
+
+  <p>
+    Destructive interference occurs when the waves are out of phase by \(\pi\).
+    Here, the peak of one wave coincides with the trough of another, and the
+    resulting electric field can be reduced or even cancel completely.
+  </p>
+
+  <p>
+    More generally, the phase difference between waves determines how strongly
+    they interfere.
+    A phase difference of \(2\pi\) corresponds to the same physical phase,
+    while a phase difference of \(\pi\) corresponds to maximum opposition.
+    For interference to produce visible fringes, the waves must share a common polarization direction.
+    Since the electric field is a vector quantity, only parallel field components can add constructively or destructively.
+    If two waves are polarized perpendicular to each other, their fields cannot cancel or reinforce, and no interference fringes are observed.
+    In intermediate cases, where the polarizations are not perfectly parallel, only the parallel component contributes to interference, resulting in fringes with reduced contrast.
+  </p>
+
+  <p>
+    Diffraction is the bending or spreading of waves when they encounter obstacles or pass through narrow openings.
+    Unlike reflection or refraction, diffraction cannot be explained by simple ray optics; it is a purely wave phenomenon.
+  </p>
+
+  <p>
+    The effect becomes significant when the size of the obstacle or slit is comparable to the wavelength of the wave.
+    It leads to patterns of constructive and destructive interference, creating bright and dark regions on a screen.
+    Diffraction shows that light and other waves have a wave nature, not just a particle-like behavior.
+  </p>
+
+  <p>
+    If light were purely a particle, it would travel straight through a single slit without spreading.
+    But when the slit width is comparable to the wavelength, we observe an interference pattern—an effect beautifully explained by Huygens’ principle, which treats every point on a wavefront as a secondary source of spherical waves.
+  </p>
+
+  <h2>Near-field and Far-field Diffraction</h2>
+
+  <p>
+    Diffraction can be studied in two regimes: <strong>near field (Fresnel)</strong> and <strong>far field (Fraunhofer)</strong>.
+  </p>
+
+  <h3>Near Field (Fresnel)</h3>
+
+  <p>
+    In the near field, a point \(P\) on the screen receives light from the slit along <em>non-parallel rays</em>.
+    The path difference between these rays is not simple (\(\Delta s \neq d \sin \theta\)) and varies with position on the screen,
+    making calculations more complex, even though the overall diffraction pattern remains unchanged.
+  </p>
+
+  <h3>Far Field (Fraunhofer)</h3>
+
+  <p>
+    If the screen is very far from the slit, the rays reaching a point \(P\) can be approximated as <em>parallel</em>,
+    especially if the slit is very narrow.
+    In this case, each point on the screen corresponds to a particular direction of rays from the slit.
+  </p>
+
+  <p>
+    If the slit is extremely narrow, it can be modeled as containing only <strong>two point sources</strong>, producing a simple interference pattern.
+    As the slit width increases, more point sources fit inside, each emitting spherical waves.
+    The superposition of these waves leads to constructive interference along certain directions, forming <em>planar wavefronts with slightly curved ends</em>, which produce the observed diffraction pattern.
+  </p>
+
+  <h2>Effect of Wavelength on Diffraction Patterns</h2>
+
+  <p>
+    If we model the slit as a collection of point sources, a smaller wavelength \(\lambda\) is analogous to having more <em>effective sources</em> per unit length of the slit,
+    because the wavefront can support finer spatial features.
+  </p>
+
+  <p>
+    You can play around with the simulation at
+    <a href="https://iwant2study.org/lookangejss/04waves_11superposition/ejss_model_T24_Diffraction/index.html" target="_blank" rel="noopener noreferrer">
+      this interactive applet
+    </a>
+    and observe how the diffraction patterns evolve as you vary the slit width and the wavelength.
+  </p>
+
+  <p>
+    At a point \(P\) on the screen, the intensity can be thought of as the sum of contributions from all point sources across the slit.
+    Since the sources are continuous and infinitesimally small, their contributions can be integrated as \(e^{ikr}\), where \(r\) can be expressed in terms of the slit position \(x\), from the start of the slit at \(x=0\) to the end at \(x=b\).
+  </p>
+
+  <p>
+    At a point \(P\) on the screen, the intensity can be thought of as the sum of contributions from all point sources across the slit.
+    Since the sources are continuous and infinitesimally small, their contributions can be integrated as \(e^{ikr}\), where \(r\) can be expressed in terms of the slit position \(x\), from the start of the slit at \(x=0\) to the end at \(x=b\):
+  </p>
+
+  <p>\[
+  r = \sqrt{x^2 + d^2}.
+  \]</p>
+
+  <p>
+    The distance from a point on the slit to point \(P\) is
+  </p>
+
+  <p>\[
+  r = \sqrt{d^2 + x^2} = d \sqrt{1 + \frac{x^2}{d^2}}.
+  \]</p>
+
+  <p>
+    For \(d \gg x\) (far-field), we can approximate using a binomial expansion:
+  </p>
+
+  <p>\[
+  r \approx d \left( 1 + \frac{x^2}{2 d^2} \right) = d + \frac{x^2}{2d}.
+  \]</p>
+
+  <p>
+    For \(d \gg x\) (far-field), we can approximate using a binomial expansion:
+  </p>
+
+  <p>\[
+  r \approx d \left( 1 + \frac{x^2}{2 d^2} \right) = d + \frac{x^2}{2d}.
+  \]</p>
+
+  <p>
+    For \(d \gg x\) (far-field), we can approximate using a binomial expansion:
+  </p>
+
+  <p>\[
+  r \approx d \left( 1 + \frac{x^2}{2 d^2} \right) = d + \frac{x^2}{2d}.
+  \]</p>
+
+  <p>
+    Thus, the phase factor becomes
+  </p>
+
+  <p>\[
+  e^{ikr} \approx e^{ikd} e^{i k \frac{x^2}{2d}}.
+  \]</p>
+
+  <p>
+    The contribution from each point on the slit can be written as a spherical wave:
+  </p>
+
+  <p>\[
+  E(r) = \frac{E}{r} e^{ikr}.
+  \]</p>
+
+  <p>
+    Since the screen distance \(d\) is much greater than the slit coordinate \(x\) (\(d \gg x\)), the amplitude factor \(1/r \approx 1/d\) can be taken out of the integral with very little error.
+    Only the phase varies significantly.
+    Therefore, the total field at \(P\) can be approximated as
+  </p>
+
+  <p>\[
+  E(P) \approx \frac{E}{d} \int_0^b e^{ik r(x)} \, dx \approx \frac{Ee^{ikd}}{d} \int_0^b e^{i k \frac{x^2}{2d}} \, dx.
+  \]</p>
+
+  <p>
+    Although the amplitude factor \(1/r \approx 1/d\) is nearly constant, the term inside the exponential, \(e^{ikr}\), is very sensitive to small changes in \(r\).
+    Even tiny variations in the path length \(r\) lead to significant differences in phase.
+  </p>
+
+  <p>
+    Since the screen distance \(d\) is much greater than the slit coordinate \(x\) (\(d \gg x\)), the amplitude factor \(1/r \approx 1/d\) can be taken out of the integral with very little error.
+    Only the phase varies significantly.
+    In the very far-field (Fraunhofer) limit, the spherical waves from the slit can be considered as parallel rays, and the path difference for a point at position \(x\) on the slit is approximated linearly as
+  </p>
+
+  <p>\[
+  \Delta r \approx x \sin \theta,
+  \]</p>
+
+  <p>
+    where \(\theta\) is the angle between the optical axis and the point on the screen.
+    Therefore, the total distance can be written as
+  </p>
+
+  <p>\[
+  r(x) \approx d - x \sin \theta,
+  \]</p>
+
+  <p>
+    and the phase factor becomes
+  </p>
+
+  <p>\[
+  e^{ikr(x)} \approx e^{ikd} e^{-ik x \sin \theta}.
+  \]</p>
+
+  <p>
+    The total field at point \(P\) on the screen is then
+  </p>
+
+  <p>\[
+  E(P) \approx \frac{E}{d} \int_0^b e^{-ik x \sin \theta} \, dx.
+  \]</p>
+
+  <p>
+    <strong>Physical interpretation:</strong> In the Fraunhofer limit, the amplitude is nearly constant (\(1/d\)), while the phase varies linearly with \(x\).
+    This linear phase variation across the slit produces the interference and diffraction pattern observed on the screen.
+  </p>
+
+  <h2>Fourier transform</h2>
+
+  <p>
+    We can model a single slit of width \(b\) as a transmission function \(A(x)\) along the \(x\)-axis:
+  </p>
+
+  <p>\[
+  A(x) =
+  \begin{cases}
+  1, & -b/2 \le x \le b/2, \\
+  0, & \text{otherwise}.
+  \end{cases}
+  \]</p>
+
+  <p>
+    By extending \(A(x)\) to be zero outside the slit (\(-\infty \to \infty\)), the Fraunhofer diffraction integral can be written as
+  </p>
+
+  <p>\[
+  E(\theta) \propto \int_{-\infty}^{\infty} A(x) \, e^{-ik x \sin \theta} \, dx.
+  \]</p>
+
+  <p>
+    Comparing this with the definition of a one-dimensional Fourier transform
+  </p>
+
+  <p>\[
+  \tilde{A}(k_x) = \int_{-\infty}^{\infty} A(x) \, e^{-i k_x x} \, dx,
+  \]</p>
+
+  <p>
+    we can identify the transverse wavevector component
+  </p>
+
+  <p>\[
+  k_x =  k \sin \theta.
+  \]</p>
+
+  <p>
+    Thus, the Fraunhofer diffraction pattern is the Fourier transform of the aperture function \(A(x)\), and the diffraction angle \(\theta\) maps directly to the transverse wavevector \(k_x\).
+  </p>
+
+  <p>
+    For a rectangular slit, evaluating the integral gives the familiar sinc function:
+  </p>
+
+  <p>\[
+  E(\theta) \propto \frac{\sin \left( \frac{k b}{2} \sin \theta \right)}{\frac{k b}{2} \sin \theta} = \text{sinc}\left( \frac{k b}{2} \sin \theta \right).
+  \]</p>
+
+  <p>
+    In the very far-field (Fraunhofer) limit, each point on the screen effectively receives contributions from rays that are nearly parallel.
+    In the Fraunhofer (very far-field) approximation, if the observation point \(P\) lies on the central axis (\(\theta = 0\)), all rays from different points along the slit are effectively parallel and travel the same distance to the screen.
+    Therefore, the path length from any point on the slit to \(P\) can be approximated as
+  </p>
+
+  <p>\[
+  r \approx d,
+  \]</p>
+
+  <p>
+    and the phase is nearly the same for all contributions, giving rise to the central maximum.
+  </p>
+
+  <p>
+    For a point \(P\) away from the central axis (\(\theta \neq 0\)), such as \(\theta = 30^\circ\), rays from different positions along the slit travel different distances to the screen.
+    For instance, the top of the slit may travel a slightly shorter path than the bottom.
+    This results in a path difference
+  </p>
+
+  <p>\[
+  \Delta r \approx x \sin \theta,
+  \]</p>
+
+  <p>
+    which produces phase differences across the slit and leads to the interference and diffraction pattern observed on the screen.
+  </p>
+
+  <h3>Observation at an off-axis point (\(\theta \neq 0\))</h3>
+
+  <p>
+    Consider a point \(P\) above the central axis, for example at \(\theta = 30^\circ\).
+    Rays originating from different points along the slit are effectively parallel in the far-field (Fraunhofer) limit, but they do not travel the same distance to reach \(P\).
+    Let \(x\) measure the position along the slit, with \(x>0\) at the top and \(x<0\) at the bottom.
+  </p>
+
+  <p><strong>Path lengths:</strong></p>
+  <ul>
+    <li>Top of the slit (\(x>0\)) → shorter path to \(P\)</li>
+    <li>Center of the slit (\(x=0\)) → path \(= d\)</li>
+    <li>Bottom of the slit (\(x<0\)) → longer path to \(P\)</li>
+  </ul>
+
+  <p>
+    Even though the rays start from different positions along the slit, they converge at the same point \(P\) on the screen, allowing us to treat the contributions as parallel rays.
+    In the Fraunhofer approximation, the path length from a point \(x\) on the slit to \(P\) can be written as
+  </p>
+
+  <p>\[
+  r(x) \approx d - x \sin \theta,
+  \]</p>
+
+  <p>
+    which captures the linear phase variation across the slit that gives rise to interference and diffraction patterns.
+  </p>
+
+  <h2>Role of the Lens in Fraunhofer Diffraction</h2>
+
+  <p>
+    The lens takes the parallel rays from different points on the slit and focuses them to a single point, providing a geometric shortcut that allows the approximated Fraunhofer diffraction pattern to be observed at its focal plane without requiring the screen to be infinitely far away.
+  </p>
+
+  <h3>The Physical Effect</h3>
+
+  <p>
+    The lens has a remarkable property: <strong>it forces all parallel rays to meet at one point</strong>.
+  </p>
+
+  <ul>
+    <li>Rays leaving different points on the slit <strong>at the same angle \(\theta\)</strong> are parallel to each other.</li>
+    <li>The lens focuses all such parallel rays to <strong>one spot</strong> on its focal plane.</li>
+    <li>The path difference between these parallel rays is \(x \tan\theta\), which for small angles approximates to \(\Delta x \sin\theta\).</li>
+  </ul>
+
+  <p>
+    So: <strong>different angles → different spots</strong> on the focal plane.
+  </p>
+
+  <h3>The Mathematical Trick</h3>
+
+  <p>
+    The lens has a special property described by the phase factor:
+  </p>
+
+  <p>\[
+  t_{\text{lens}}(x) = e^{-i\frac{k}{2f}x^2}
+  \]</p>
+
+  <p><strong>Why this matters:</strong></p>
+
+  <ol>
+    <li>
+      Light from slit to lens (distance \(d\)) gets Fresnel phase:
+      \[
+      e^{+i\frac{k}{2d}x^2}
+      \]
+    </li>
+    <li>
+      The lens multiplies by:
+      \[
+      e^{-i\frac{k}{2f}x^2}
+      \]
+    </li>
+    <li>
+      If we choose \(d = f\) (slit at the lens's front focal point):
+      \[
+      e^{+i\frac{k}{2f}x^2} \times e^{-i\frac{k}{2f}x^2} = 1
+      \]
+      The \(x^2\) terms <strong>cancel completely</strong>!
+    </li>
+  </ol>
+
+  <h3>What's Left After Cancellation?</h3>
+
+  <p>
+    After the \(x^2\) cancellation, the phase depends only on:
+  </p>
+
+  <ul>
+    <li>\(x\) (slit position)</li>
+    <li>Spot position on screen \(X\) (which equals \(f\theta\))</li>
+  </ul>
+
+  <p>
+    The math simplifies to:
+  </p>
+
+  <p>\[
+  E(\text{spot at position } P) \propto \int A(x) e^{-ikx(X/f)} \, dx
+  \]</p>
+
+  <p>
+    But \(X/f = \theta \approx \sin\theta\) for small angles, so:
+  </p>
+
+  <p>\[
+  E \propto \int A(x) e^{-ikx\sin\theta} \, dx
+  \]</p>
+
+  <p>
+    <strong>This is EXACTLY the Fraunhofer formula!</strong>
+  </p>
+
+  <h3>The Key Insight</h3>
+
+  <p>
+    We are trying to make parallel rays with \(x\sin\theta\) path difference interfere.
+    Without a lens:
+  </p>
+
+  <ul>
+    <li>We need the screen at infinity for rays to be parallel.</li>
+    <li>The \(x\sin\theta\) phase emerges naturally at infinity.</li>
+  </ul>
+
+  <p>
+    With a lens:
+  </p>
+
+  <ul>
+    <li>The lens <strong>artificially creates</strong> approximate \(x\sin\theta\) phase relationship.</li>
+    <li>It does this by canceling the near-field \(x^2\) phase distortions.</li>
+    <li>The focal plane acts like "infinity brought close".</li>
+  </ul>
+
+  <p>
+    The lens transforms the problem from "wait until infinity to see parallel rays" to "I'll make parallel rays meet right here at my focal plane."
+    wallaahh Lens does the Fourier Transform.
+  </p>
+
+</body>
+</html>
