@@ -11,9 +11,6 @@
             margin: 40px;
             background-color: #f9f9f9;
             color: #222;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
         }
         h1 {
             color: #2c3e50;
@@ -29,7 +26,6 @@
         p {
             font-size: 1.1em;
             margin-bottom: 15px;
-            text-align: justify;
         }
         figure {
             text-align: center;
@@ -39,35 +35,17 @@
             max-width: 80%;
             height: auto;
             border: 1px solid #ccc;
-            border-radius: 5px;
         }
         figcaption {
-            font-size: 0.9em;
+            font-size: 1em;
             color: #555;
             margin-top: 8px;
-            font-style: italic;
-        }
-        .note {
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
     <h1>More Physics, Less Math</h1>
-
-    <div class="note">
-        <strong>Note:</strong> For images to display properly on GitHub Pages:
-        <ol>
-            <li>Upload image files to your GitHub repository</li>
-            <li>Use relative paths like <code>"filename.png"</code> (not absolute paths like <code>"/Users/..."</code>)</li>
-            <li>Make sure filenames match exactly (case-sensitive)</li>
-        </ol>
-    </div>
 
     <h2>LSPR Modes and Fano Resonance</h2>
     <p>
@@ -76,60 +54,42 @@
 
     <!-- Figure 1 -->
     <figure>
-        <!-- CHANGE THIS PATH: Upload "Picture1.png" to your GitHub repo -->
-        <img src="Picture1.png" alt="Plasmon illustration with electron sea, incident electric field and wave vector">
+        <img src="Picture 1.png" alt="Plasmon illustration with electron sea, incident electric field and wave vector" style="max-width: 50%;">
         <figcaption>Figure 1: Illustration of a localized surface plasmon with free electrons (electron sea), incident electric field (E) and wave vector (k).</figcaption>
     </figure>
 
     <p>
         When light shines on a metal (Fig.1), the free electrons on its surface respond to the incoming electric field by moving back and forth. How the electrons respond depends on the frequency of the incoming light and the size and shape of the particle. At a particular frequency that matches the natural oscillation frequency of the electrons, they absorb the maximum amount of light energy and oscillate most strongly. This condition is called resonance, and for metal nanoparticles, it is the localized surface plasmon resonance (LSPR).
-    </p>
-    <p>
         The energy absorbed by the electrons as they oscillate can also be re-radiated as light, appearing as reflected, or scattered light and can add up with transmitted light. This happens because the oscillating electrons act like tiny dipoles, which emit electromagnetic waves in different directions while they oscillate. The balance between the energy lost as heat and the energy re-radiated as light determines how much light is absorbed, transmitted, or reflected.
     </p>
 
     <!-- Figure 2 -->
     <figure>
-        <!-- CHANGE THIS PATH: Upload "e.png" to your GitHub repo -->
-        <img src="e.png" alt="Dolmen-shaped nanorods">
+        <img src="e.png" alt="Dolmen-shaped nanorods" style="max-width: 50%;">
         <figcaption>Figure 2: Dolmen shape of nanorods.</figcaption>
     </figure>
 
     <p>
-        When a dolmen-like rod structure (Fig.2) is illuminated by light polarized along the long axis of the central rod, a dipole mode is excited in that rod, with positive and negative charges accumulating at opposite ends. This creates strong electric fields at the rod ends, which vary in strength across a broad wavelength range due to the dipole's wide resonance. The oscillating dipole can induce quadrupole modes in the neighboring vertical rods: the near field from the positive end of the central rod pulls charges in one direction at the corresponding end of the vertical rod, while the negative end does the opposite, forming two opposite dipoles in the vertical rod.
-    </p>
-    <p>
-        These quadrupole modes radiate very weakly (high-Q, narrow resonance) and can interfere constructively or destructively (If the dipole and quadrupole modes interfere destructively in the scattered channels (less light radiated sideways/backward), then more light continues forward, so the transmission increases. So constructive/destructive interference in scattering and transmission are complementary: what goes up in one often goes down in the other.) with the bright dipole mode, modifying the scattering parameters such as reflection and transmission, and giving rise to some funny shapes in the optical spectrum (Fig.3).
-    </p>
-
-    <p>
+        When a dolmen-like rod structure (Fig.2) is illuminated by light polarized along the long axis of the central rod, a dipole mode is excited in that rod, with positive and negative charges accumulating at opposite ends. This creates strong electric fields at the rod ends, which vary in strength across a broad wavelength range due to the dipole’s wide resonance. The oscillating dipole can induce quadrupole modes in the neighboring vertical rods: the near field from the positive end of the central rod pulls charges in one direction at the corresponding end of the vertical rod, while the negative end does the opposite, forming two opposite dipoles in the vertical rod. These quadrupole modes radiate very weakly (high-Q, narrow resonance) and can interfere constructively or destructively (If the dipole and quadrupole modes interfere destructively in the scattered channels (less light radiated sideways/backward), then more light continues forward, so the transmission increases.So constructive/destructive interference in scattering and transmission are complementary: what goes up in one often goes down in the other.) with the bright dipole mode, modifying the scattering parameters such as reflection and transmission, and giving rise to some funny shapes in the optical spectrum (Fig.3).
         When you bring the horizontal rod closer to the two vertical rods, they start talking to each other more strongly.
     </p>
 
-    <!-- Figure 3 -->
+    <!-- Figure 3 - CORRECTED PATH -->
     <figure>
-        <!-- CHANGE THIS PATH: Upload "fano_resonance.gif" to your GitHub repo -->
-        <img src="fano_resonance.gif" alt="Fano resonance spectrum showing asymmetric transmission dip">
+        <img src="c7ra12666b-f2_hi-res.gif"
+             alt="Fano resonance spectrum showing asymmetric transmission dip">
         <figcaption>
-            <strong>Figure 3:</strong> Typical Fano resonance spectrum showing the asymmetric transmission dip. 
-            The sharp, skewed lineshape arises from interference between a broad bright mode and 
+            <strong>Figure 3.</strong> Typical Fano resonance spectrum showing the asymmetric transmission dip.
+            The sharp, skewed lineshape arises from interference between a broad bright mode and
             narrow dark mode resonance, with the steep edge indicating high spectral sensitivity.
         </figcaption>
     </figure>
 
     <p>
         The moving electrons in the horizontal rod push and pull on the electrons in the vertical rods. The vertical rods push back. But they're a bit slow to respond.
-    </p>
-    <p>
         So when the horizontal rod is ready to swing the other way, the vertical rods are still pushing back from the last swing. It's like trying to change direction while someone is still pushing against you.
-    </p>
-    <p>
         This makes the whole system move slower. Slower oscillation means lower frequency, which is a redshift – the light wavelength gets longer.
-    </p>
-    <p>
         If you move them apart, the vertical rods barely push back. The horizontal rod can swing fast and freely, so the frequency is higher – a blueshift.
-    </p>
-    <p>
         The spacing controls how hard the vertical rods push back, which controls how fast or slow everything vibrates. Closer = stronger pushback = slower = redshift.
     </p>
 
