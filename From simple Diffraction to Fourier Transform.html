@@ -7,12 +7,22 @@
   <!-- Basic styling -->
   <style>
     body {
-      font-family: "Times New Roman", Times, serif;
-      margin: 1.5cm;
-      line-height: 1.5;
-     
-      text-align: justify
-    }
+    font-family: "Times New Roman", Times, serif;
+    margin: 1.5cm;
+    line-height: 1.5;
+    text-align: left; /* Keep body text left-aligned */
+}
+
+/* Apply justification only to paragraphs */
+p {
+    text-align: justify;
+    hyphens: auto; /* Optional: allows hyphenation for better spacing */
+}
+
+/* Keep headings left-aligned */
+h1, h2, h3, h4 {
+    text-align: left;
+}
     h1, h2, h3 {
       font-family: "Times New Roman", Times, serif;
       font-weight: bold;
